@@ -16,11 +16,11 @@ body{
   display: table;
 }
 
-.debug{
+/* .debug{
   min-width: 10px;
   min-height: 10px;
   background-color: rgba(204, 97, 97, 0.3);
-}
+} */
 
 .hidden-xs{
   display: visible;
@@ -179,8 +179,7 @@ main .section-menu .menu-bottom{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100% - 220px);
-  border: 2px solid black;
+  height: calc(100vh - 308px);
 }
 
 main .section-menu .menu-bottom .playlist .play-row .crea::before{
@@ -210,10 +209,22 @@ main .section-menu .menu-bottom .upload{
   height: 85px;
 }
 
-main .section-menu .menu-bottom .upload .installa{
+main .section-menu .menu-bottom .upload .hidden-xs .installa{
   width: 90%;
   padding: 6px 0;
   border-bottom: 1px solid gray;
+  margin-bottom: 10px;
+}
+
+main .section-menu .menu-bottom .upload .visible-xs .box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+main .section-menu .menu-bottom .upload .visible-xs .box .installa{
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 main .section-menu .menu-bottom .upload .installa img{
   height: 20px;
@@ -224,7 +235,6 @@ main .section-menu .menu-bottom .upload .account img{
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  margin-top: 10px;
   vertical-align: middle;
   background-color: #808080;
 } 
@@ -287,28 +297,29 @@ main .section-menu .menu-top .home-row.active{
 main .section-content .container .row .box-img{
   position: relative;
 }
+main .section-content .container .row .box-img.img-round img{
+  border-radius: 50%;
+}
 main .section-content .container .row .box-img .overlay{
   position: absolute;
-   /* display: none; */
-  top: 50%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: none;
+  top: 0; 
+  left: 0;
   width: 100%;
   height: 100%;
   font-size: 50px;
   background-color: rgba(0,0,0,0.5);
-  opacity: 1;
+  opacity: 2;
   cursor: pointer;
+}
+main .section-content .container .row .box-img:hover .overlay{
+  display: block; 
 }
 main .section-content .container .row .box-img .overlay i{
   position: absolute;
   top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%);
-}
-main .section-content .container .row .box:hover{
-  opacity: 2;
-  cursor: pointer;
 }
 
 main nav ul li.li-active::after{
@@ -528,6 +539,10 @@ footer .bar:hover .bar-status{
   main .row-content .box{
     width: calc(100% / 2  - 10px);
     /* max-width: 250px; */
+  }
+  main .section-menu .menu-bottom{
+    justify-content: flex-end;
+    height: calc(100vh - 245px);
   }
 
   footer .footer-left .box.play{

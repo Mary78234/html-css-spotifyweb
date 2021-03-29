@@ -29,6 +29,9 @@ body{
 .hidden-xs{
   display: visible;
 }
+.visible-xs{
+  display: none;
+}
 
 /* common command */
 .float{
@@ -70,6 +73,10 @@ body{
   font-size: 9px;
   font-weight: 600;
 }
+.text-font-12{
+  font-size: 12px;
+  font-weight: 400;
+}
 
 .color-white{
   color: white;
@@ -79,11 +86,22 @@ body{
   color: #EAEBEA;
 }
 
+.margin-40{
+  margin: 0 40px;
+}
 .margin-20{
   margin: 20px;
 }
 .margin-b20{
   margin-bottom: 20px;
+}
+.margin-10{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.margin-5{
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .margin-s10{
   margin-left: 10px;
@@ -93,12 +111,19 @@ body{
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.padding-10{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
 .padding-s8{
   padding-left: 8px;
   padding-right: 8px;
 }
 .padding-s10{
   padding: 0 10px;
+}
+.padding-left-20{
+  padding-left: 20px;
 }
 
 ul{
@@ -113,25 +138,114 @@ main{
   background-color: salmon;
 }
 
+/* main section left menu*/
 main .section-menu{
   width: 230px;
+  height: 100%;
+  min-height: 150px;
+  overflow-y: hidden; 
+}
+main .section-menu .menu{
+  width: 100%;
   height: 100%;
   background-color: black;
 }
 
+main .section-menu .logo .hidden-xs{
+  height: 85px;
+}
+main .section-menu .logo .hidden-xs img{
+  height: 41px;
+}
+main .section-menu .logo .visible-xs img{
+  height: 30px;
+  padding-top: 5px;
+}
+
+main .section-menu .menu .menu-top img{
+ height: 24px;
+ vertical-align: middle;
+ filter: invert(30%);
+}
+main .section-menu .menu .menu-top .hidden-xs .home-row{
+  line-height: 40px;
+  width: 100%;
+}
+
+main .section-menu .menu-bottom{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 220px);
+  border: 2px solid black;
+}
+main .section-menu .menu-bottom .playlist{
+  height: 65%;
+  min-height: 100px;
+  background-color: cornflowerblue;
+  border: 1px solid blue;
+}
+
+main .section-menu .menu-bottom .playlist .play-row .crea::before{
+  content: '+';
+  display: inline-block;
+  height: 37px;
+  width: 37px;
+  font-size: 35px;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+  line-height: 28px;
+  margin: 10px 8px 10px 0;
+  background-color: #A3A3A3;
+}
+main .section-menu .menu-bottom .playlist .lista{
+  height: 65%;
+  overflow-y: auto;
+  border: 1px solid green;
+}
+
+main .section-menu .menu-bottom .playlist .lista ul li{
+  padding: 5px 0;
+}
+
+main .section-menu .menu-bottom .upload{
+  height: 85px;
+}
+
+main .section-menu .menu-bottom .upload .installa{
+  width: 90%;
+  padding: 6px 0;
+  border-bottom: 1px solid gray;
+}
+main .section-menu .menu-bottom .upload .installa img{
+  height: 20px;
+  vertical-align: middle;
+} 
+
+main .section-menu .menu-bottom .upload .account img{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-top: 10px;
+  vertical-align: middle;
+  background-color: #808080;
+} 
+
+/* main section right content */
 main .section-content{
   position: relative;
   width: calc(100% - 230px);
   height: 100%;
-  padding-top: 90px;
-  background-color: #141922;
+  /* background-color: white; */
 }
 
 main .section-content .barra-upgrade{
   position: fixed;
   top: 0;
   right: 0;
-  width: 100%;
+  z-index: 2;
+  width: calc(100% - 230px);
   height: 90px;
   padding: 33px 10px;
   background-color: rgba(0, 0, 0, 0.3);
@@ -139,7 +253,9 @@ main .section-content .barra-upgrade{
 
 main .section-content .content{
   height: 100%;
+  padding-top: 90px;
   overflow-y: auto;
+  background-color: white;
 }
 
 main nav ul li{
@@ -177,6 +293,10 @@ main .row img{
   height: 100%;
   object-fit: cover;
 }
+/* main hover */
+main .section-menu .menu-top .home-row.active{
+  border-left: 2px solid #B2F256;
+}
 
 
 /* footer */
@@ -188,6 +308,7 @@ footer{
   min-width: 500px;
   height: 90px;
   background-color: #252425;
+  z-index: 999;
 }
 
 footer .footer-left, footer .footer-right{
@@ -226,7 +347,7 @@ footer .footer-center{
   max-width: 530px;
   min-width: 150px;
   width: 100%;
-  flex-grow: 2;
+  flex-grow: 2.5;
   flex-shrink: 1;
   margin: 0 40px;
 }
@@ -325,6 +446,9 @@ footer .bar:hover .bar-status{
 
 /* screen md */
 @media screen and (min-width: 640px) and (max-width: 878px){
+  .visible-xs{
+    display: none;
+  }
   main .row-content .box{
     width: calc(100% / 4 - 10px);
   }
@@ -335,6 +459,9 @@ footer .bar:hover .bar-status{
 
  /* screen sm */
 @media screen and (min-width: 553px) and (max-width: 639px){
+  .visible-xs{
+    display: none;
+  }
   main .row-content .box{
     width: calc(100% / 2 - 10px);
   }
@@ -364,10 +491,16 @@ footer .bar:hover .bar-status{
   .hidden-xs{
     display: none;
   }
+  .visible-xs{
+    display: block;
+  }
   main .section-menu{
   width: 50px;
   }
   main .section-content{
+    width: calc(100% - 50px);
+  }
+  main .section-content .barra-upgrade{
     width: calc(100% - 50px);
   }
   main .row-content .box{

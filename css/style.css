@@ -415,17 +415,25 @@ footer .footer-center{
   margin: 0 40px;
 }
 footer .footer-center .center-top{
+  /* max-width: 220px; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
+footer .footer-center .center-top .center-top-icon{
+  width: 100%;
+  max-width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 footer .footer-center .center-top .fa-play-circle{
   font-size: 30px;
-  padding: 0 20px;
+  /* padding: 0 20px; */
 }
 footer .footer-center .center-top .fas{
   font-size: 16px;
-  padding: 0 10px;
+  /* padding: 0 10px; */
 }
 footer .footer-center .center-bottom{
   display: flex;
@@ -587,15 +595,17 @@ footer .bar:hover .bar-status{
     margin-right: 10px;
   }
   footer .footer-center{
+    /* width: 100%;
+    justify-content: space-between; */
     flex-grow: 1;
     margin: 0 20px;
   }
-  footer .footer-center .center-top .fa-play-circle{
-    padding: 0 5px;
+  /* footer .footer-center .center-top .fa-play-circle{
+    padding: 0 10px;
   }
   footer .footer-center .center-top .fas{
-    padding: 0 2px;
-  }
+    padding: 0 5px;
+  } */
   footer .footer-center .center-bottom .bar{
     margin: 0 10px;
   }
